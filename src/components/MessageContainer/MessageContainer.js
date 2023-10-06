@@ -22,7 +22,9 @@ const MessageContainer = ({ messageList, user }) => {
                   src="/profile.jpeg"
                   className="profile-image"
                   style={
-                    messageList[index - 1].user.name === user.name ||
+                    (index === 0
+                      ? { visibility: "visible" }
+                      : messageList[index - 1].user.name === user.name) ||
                     messageList[index - 1].user.name === "system"
                       ? { visibility: "visible" }
                       : { visibility: "hidden" }
